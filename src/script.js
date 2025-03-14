@@ -23,29 +23,60 @@ window.addEventListener("scroll", () => {
 
 // Responsive navbar script
 document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const overlay = document.querySelector(".overlay");
-  const closeIcon = document.querySelector(".close-mobile-menu-icon");
-  const body = document.querySelector("body");
+  const elements = {
+    menuToggle: document.querySelector(".menu-toggle"),
+    mobileMenu: document.querySelector(".mobile-menu"),
+    cartToggle: document.querySelector(".cart-toggle"),
+    searchToggle: document.querySelector(".search-toggle"),
+    cartDrawer: document.querySelector(".cart-drawer-container"),
+    searchDrawer: document.querySelector(".search-drawer-container"),
+    overlay: document.querySelector(".overlay"),
+    closeMenuIcon: document.querySelector(".close-mobile-menu-icon"),
+    closeCartIcon: document.querySelector(".close-cart-drawer-icon"),
+    closeSearchIcon: document.querySelector(".close-search-drawer-icon"),
+    body: document.querySelector("body"),
+  };
 
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-    overlay.classList.toggle("active");
-    body.classList.toggle("no-scroll");
-  });
+  const toggleState = (element) => {
+    return (event) => {
+      event.stopPropagation();
+      element.classList.toggle("active");
+      elements.overlay.classList.toggle("active");
+      elements.body.classList.toggle("no-scroll");
+    };
+  };
 
-  overlay.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-    overlay.classList.remove("active");
-    body.classList.remove("no-scroll");
-  });
+  const closeAll = (event) => {
+    event.stopPropagation();
+    [elements.mobileMenu, elements.cartDrawer, elements.searchDrawer].forEach(
+      (el) => el.classList.remove("active")
+    );
+    elements.overlay.classList.remove("active");
+    elements.body.classList.remove("no-scroll");
+  };
 
-  closeIcon.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-    overlay.classList.remove("active");
-    body.classList.remove("no-scroll");
-  });
+  const stopPropagation = (event) => event.stopPropagation();
+
+  elements.menuToggle.addEventListener(
+    "click",
+    toggleState(elements.mobileMenu)
+  );
+  elements.cartToggle.addEventListener(
+    "click",
+    toggleState(elements.cartDrawer)
+  );
+  elements.searchToggle.addEventListener(
+    "click",
+    toggleState(elements.searchDrawer)
+  );
+
+  elements.overlay.addEventListener("click", closeAll);
+  elements.closeMenuIcon.addEventListener("click", closeAll);
+  elements.closeCartIcon.addEventListener("click", closeAll);
+  elements.closeSearchIcon.addEventListener("click", closeAll);
+
+  elements.cartDrawer.addEventListener("click", stopPropagation);
+  elements.searchDrawer.addEventListener("click", stopPropagation);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -167,6 +198,24 @@ tabs.forEach((tab) => {
   });
 });
 
+//Animation for product when scrollscroll
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".product");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  items.forEach((item) => observer.observe(item));
+});
+
+// Logic when select colorcolor
 document.querySelectorAll(".color-product").forEach((color) => {
   color.addEventListener("click", function (event) {
     event.preventDefault();

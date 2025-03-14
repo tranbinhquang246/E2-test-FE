@@ -180,17 +180,47 @@
               </li>
             </ul>
           </div>
-          <div class="overlay"></div>
         </nav>
 
         <img class="logo" src="public/images/logo.svg" alt="Logo" />
         <div class="notification">
-          <div class="noti-container">
+          <div class="noti-container search-toggle">
             <img
               class="noti-img"
               src="public/icons/search.svg"
               alt="Search icon"
             />
+            <div class="search-drawer-container">
+              <header class="search-drawer-header">
+                <h3>Search our site</h3>
+                <img
+                  class="close-search-drawer-icon"
+                  src="public/icons/close.svg"
+                  alt="Close search search icon"
+                />
+              </header>
+              <div class="search-drawer-body">
+                <div class="search-input-component">
+                  <img src="public/icons/search.svg" alt="Search icon" />
+                  <input type="text" placeholder="Search" />
+                </div>
+                <div class="quick-link-component">
+                  <span>Quick link</span>
+                  <div class="nav">
+                    <a href="#">Cat</a>
+                    <img src="public/icons/navigate.svg" alt="Navigate icon" />
+                  </div>
+                  <div class="nav">
+                    <a href="#">Dog</a>
+                    <img src="public/icons/navigate.svg" alt="Navigate icon" />
+                  </div>
+                  <div class="nav">
+                    <a href="#">Others</a>
+                    <img src="public/icons/navigate.svg" alt="Navigate icon" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <a href="#" class="noti-container">
             <img class="noti-img" src="public/icons/user.svg" alt="User icon" />
@@ -201,14 +231,33 @@
               src="public/icons/heart.svg"
               alt="Heart icon"
             />
-            <div class="noti-badge">3</div>
+            <div class="noti-badge">0</div>
           </a>
-          <a href="#" class="noti-container">
+          <div href="#" class="noti-container cart-toggle">
             <img class="noti-img" src="public/icons/cart.svg" alt="Cart icon" />
-            <div class="noti-badge">3</div>
-          </a>
+            <div class="noti-badge">0</div>
+            <div class="cart-drawer-container">
+              <header class="cart-drawer-header">
+                <h3>Shopping cart</h3>
+                <img
+                  class="close-cart-drawer-icon"
+                  src="public/icons/close.svg"
+                  alt="Close cart drawer icon"
+                />
+              </header>
+              <div class="cart-drawer-body">
+                <h2>Your cart is empty</h2>
+                <p>
+                  You may check out all the available products and buy some in
+                  the shop
+                </p>
+                <a href="#"> Return to shop </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="overlay"></div>
     </header>
     <section>
       <div class="slider-container">
