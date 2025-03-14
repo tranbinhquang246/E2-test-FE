@@ -57,8 +57,8 @@
 
     <header class="sticky-on-scroll">
       <div class="container">
-        <nav>
-          <span class="menu-toggle">&#9776;</span>
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav">
           <ul class="navbar">
             <li class="nav-item slide-border-hover">
               <a href="#" class="nav-link">HOME</a>
@@ -67,18 +67,19 @@
               <a href="#" class="nav-link">SHOP</a>
             </li>
             <li class="nav-item slide-border-hover">
-              <a href="#" class="nav-link"
-                >PRODUCTS
-                <img src="public/icons/arrow-icon.svg" alt="Arrow icon"
-              /></a>
+              <a href="#" class="nav-link">
+                PRODUCTS
+                <img src="public/icons/arrow-icon.svg" alt="Arrow icon" />
+              </a>
               <div class="dropdown-menu">
-                <div></div>
+                <div>Hello</div>
               </div>
             </li>
             <li class="nav-item slide-border-hover">
-              <a href="#" class="nav-link"
-                >PAGES <img src="public/icons/arrow-icon.svg" alt="Arrow icon"
-              /></a>
+              <a href="#" class="nav-link">
+                PAGES
+                <img src="public/icons/arrow-icon.svg" alt="Arrow icon" />
+              </a>
               <div class="dropdown-menu"></div>
             </li>
             <li class="nav-item slide-border-hover">
@@ -89,6 +90,99 @@
             </li>
           </ul>
         </nav>
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">
+          <span class="menu-toggle">☰</span>
+          <div class="mobile-menu">
+            <img
+              class="close-mobile-menu-icon"
+              src="public/icons/close.svg"
+              alt="Close mobile menu icon"
+            />
+            <ul class="mobile-navbar">
+              <li class="mobile-nav-item">
+                <div href="#" class="mobile-nav-title">
+                  Home<span class="toggle-icon">+</span>
+                </div>
+                <div class="mobile-nav-content">
+                  <a href="#">Home Fashion 01</a>
+                  <a href="#">Home Multi Brand</a>
+                  <a href="#">Home Gift Card</a>
+                  <a href="#">Home Furniture 2</a>
+                  <a href="#">Home Fashion 02</a>
+                  <a href="#">Home Fashion 03</a>
+                  <a href="#">Home Fashion 04</a>
+                </div>
+              </li>
+              <li class="mobile-nav-item">
+                <div href="#" class="mobile-nav-title">
+                  Shop<span class="toggle-icon">+</span>
+                </div>
+                <div class="mobile-nav-content">
+                  <a href="#">Home Fashion 01</a>
+                  <a href="#">Home Multi Brand</a>
+                  <a href="#">Home Gift Card</a>
+                  <a href="#">Home Furniture 2</a>
+                  <a href="#">Home Fashion 02</a>
+                  <a href="#">Home Fashion 03</a>
+                  <a href="#">Home Fashion 04</a>
+                </div>
+              </li>
+              <li class="mobile-nav-item">
+                <div href="#" class="mobile-nav-title">
+                  Product<span class="toggle-icon">+</span>
+                </div>
+                <div class="mobile-nav-content">
+                  <a href="#">Home Fashion 01</a>
+                  <a href="#">Home Multi Brand</a>
+                  <a href="#">Home Gift Card</a>
+                  <a href="#">Home Furniture 2</a>
+                  <a href="#">Home Fashion 02</a>
+                  <a href="#">Home Fashion 03</a>
+                  <a href="#">Home Fashion 04</a>
+                </div>
+              </li>
+              <li class="mobile-nav-item">
+                <div href="#" class="mobile-nav-title">
+                  Pages<span class="toggle-icon">+</span>
+                </div>
+                <div class="mobile-nav-content">
+                  <a href="#">Home Fashion 01</a>
+                  <a href="#">Home Multi Brand</a>
+                  <a href="#">Home Gift Card</a>
+                  <a href="#">Home Furniture 2</a>
+                  <a href="#">Home Fashion 02</a>
+                  <a href="#">Home Fashion 03</a>
+                  <a href="#">Home Fashion 04</a>
+                </div>
+              </li>
+              <li class="mobile-nav-item">
+                <div href="#" class="mobile-nav-title">
+                  About<span class="toggle-icon">+</span>
+                </div>
+                <div class="mobile-nav-content">
+                  <a href="#">Home Fashion 01</a>
+                  <a href="#">Home Multi Brand</a>
+                  <a href="#">Home Gift Card</a>
+                  <a href="#">Home Furniture 2</a>
+                  <a href="#">Home Fashion 02</a>
+                  <a href="#">Home Fashion 03</a>
+                  <a href="#">Home Fashion 04</a>
+                </div>
+              </li>
+              <li class="mobile-nav-item">
+                <a
+                  href="#"
+                  class="mobile-nav-title"
+                  style="text-decoration: none"
+                  >Buy Theme</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="overlay"></div>
+        </nav>
+
         <img class="logo" src="public/images/logo.svg" alt="Logo" />
         <div class="notification">
           <div class="noti-container">

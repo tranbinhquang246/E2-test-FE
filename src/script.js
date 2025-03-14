@@ -21,6 +21,54 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
+// Responsive navbar script
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const overlay = document.querySelector(".overlay");
+  const closeIcon = document.querySelector(".close-mobile-menu-icon");
+  const body = document.querySelector("body");
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    body.classList.toggle("no-scroll");
+  });
+
+  overlay.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    body.classList.remove("no-scroll");
+  });
+
+  closeIcon.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    body.classList.remove("no-scroll");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".mobile-nav-item");
+
+  menuItems.forEach((item) => {
+    const title = item.querySelector(".mobile-nav-title");
+    const content = item.querySelector(".mobile-nav-content");
+
+    if (content) {
+      title.addEventListener("click", () => {
+        menuItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.classList.contains("active")) {
+            otherItem.classList.remove("active");
+          }
+        });
+
+        item.classList.toggle("active");
+      });
+    }
+  });
+});
+
 // Slider script
 document.querySelector(".menu-toggle").addEventListener("click", function () {
   document.querySelector(".navbar").classList.toggle("active");
