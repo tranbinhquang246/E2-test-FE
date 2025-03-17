@@ -190,14 +190,14 @@ header .container {
   z-index: 10;
   top: 100%;
   left: 0;
-  background: white;
+  background: transparent;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.3s ease;
   min-width: 150px;
+  padding-top: 20px;
 }
 
 .dropdown-menu a {
@@ -213,6 +213,61 @@ header .container {
 
 .dropdown-menu a:hover {
   background: #f0f0f0;
+}
+
+.dropdown-menu-container {
+  display: grid;
+  gap: 10px;
+  background-color: white;
+  width: fit-content;
+  min-width: 320px;
+  height: fit-content;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-dropdown-menu-container {
+  grid-template-columns: repeat(6, minmax(162px, 1fr));
+}
+
+.page-dropdown-menu-container {
+  grid-template-columns: repeat(3, minmax(162px, 1fr));
+}
+
+.product-dropdown-menu-container.merged {
+  grid-column: 5 / 7;
+  word-wrap: break-word;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  word-wrap: break-word;
+}
+
+.grid-item h5 {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.grid-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grid-item a {
+  padding: unset;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--body-text);
+}
+
+.grid-item a:hover {
+  background-color: unset;
+  color: var(--primary-brand);
 }
 
 .nav-item:hover .dropdown-menu {
@@ -786,6 +841,7 @@ header .container {
 .product img {
   width: 100%;
   height: auto;
+  min-height: 342px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -936,6 +992,10 @@ header .container {
     font-size: 12px;
     line-height: 16px;
     border-radius: 33px;
+  }
+
+  .product img {
+    min-height: unset;
   }
 
   .color-product {

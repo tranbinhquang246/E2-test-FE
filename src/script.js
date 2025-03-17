@@ -100,6 +100,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Calculate poisition menu dropdown show
+function adjustDropdownPosition(dropdown) {
+  console.log(dropdown);
+  const dropdownWidth = dropdown.offsetWidth;
+  console.log(dropdownWidth);
+  let leftOffset = -(dropdownWidth / 2);
+  const dropdownLeft = dropdown.getBoundingClientRect().left;
+  if (dropdownLeft + leftOffset < 0) {
+    leftOffset = -dropdownLeft;
+  }
+  dropdown.style.left = `${leftOffset}px`;
+}
+
+const dropdowns = document.querySelectorAll(".nav-item .dropdown-menu");
+dropdowns.forEach((dropdown) => {
+  adjustDropdownPosition(dropdown);
+});
+
 // Slider script
 document.querySelector(".menu-toggle").addEventListener("click", function () {
   document.querySelector(".navbar").classList.toggle("active");
@@ -215,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
   items.forEach((item) => observer.observe(item));
 });
 
-// Logic when select colorcolor
+// Logic when select color
 document.querySelectorAll(".color-product").forEach((color) => {
   color.addEventListener("click", function (event) {
     event.preventDefault();
